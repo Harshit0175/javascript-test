@@ -123,9 +123,67 @@ function fibonacci(n) {
 
 
 
+function rotateArray(arr) {
+  if (arr.length > 0) {
+      let lastElement = arr.pop();   
+      arr.unshift(lastElement);     
+  }
+  return arr;
+}
+console.log(rotateArray([1, 2, 3, 4, 5]));  
+console.log(rotateArray([2, 3, 4, 5, 1]));  
 
 
+// For a given two-dimensional integer array/list ‘ARR’ of size (N x M), print the ‘ARR’ in a sine wave order, i.e., print the first column top to bottom, next column bottom to top, and so on.
+// For eg:-
+// The sine wave for the matrix:-
+// 1 2
+// 3 4
+// will be [1, 3, 4, 2].
 
+function sineWavePrint(arr) {
+  let rows = arr.length;
+  let cols = arr[0].length;
+  let result = [];
+
+  for (let col = 0; col < cols; col++) {
+      if (col % 2 === 0) {
+          for (let row = 0; row < rows; row++) {
+              result.push(arr[row][col]);
+          }
+      } else {
+          
+          for (let row = rows - 1; row >= 0; row--) {
+              result.push(arr[row][col]);
+          }
+      }
+  }
+
+  return result;
+}
+
+let arr = [
+  [1, 2],
+  [3, 4]
+];
+
+console.log(sineWavePrint(arr));
+
+
+// Example:
+// Input: "hello"
+// Output: "HELLO"
+// Hint:
+// You can use ASCII values to determine the difference between lowercase and uppercase letters. In the ASCII table:
+// Lowercase letters ('a' to 'z') range from 97 to 122.
+// Uppercase letters ('A' to 'Z') range from 65 to 90.
+// You can use this information to convert each lowercase letter to its corresponding uppercase counterpart.
+
+function toUpperCase(str) {
+  return str.toUpperCase();
+}
+let input = "hello";
+console.log(toUpperCase(input));  
 
 
 
